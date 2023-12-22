@@ -1,0 +1,36 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.5.1'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.security'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '11'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// Spring MVC를 사용한 RESTful서비스를 개발하는데 사용
+	implementation 'org.springframework.boot:spring-boot-starter'
+	// unit, Hamcrest, Mockito를 포함하는 스프링 어플리케이션을 테스트
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// Spring MVC를 사용한 RESTful서비스를 개발하는데 사용(웹)
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.0'
+
+	implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// Log4JDBC
+	implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16'
+}
